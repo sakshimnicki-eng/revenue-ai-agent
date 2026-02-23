@@ -70,6 +70,9 @@ if st.button("Run Analysis"):
             ar_data = pd.read_excel(ar_file)
             billing_data = pd.read_excel(billing_file)
             contract_data = pd.read_excel(contract_file)
+            st.write("AR Columns:", list(ar_data.columns))
+            st.write("Billing Columns:", list(billing_data.columns))
+            st.write("Contract Columns:", list(contract_data.columns))
 
             df = ar_data.merge(billing_data, on="Invoice_No")
             df = df.merge(contract_data, on="Project_ID")
